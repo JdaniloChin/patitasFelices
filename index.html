@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Veterinaria Patitas Felices</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+    <main class="container-fluid min-vh-100 login-container">
+        <section class="login-form-section d-flex">
+            <form class="login-card" id="loginForm">
+                <h1>Iniciar sesión</h1>
+                <p>Ingrese sus credenciales para acceder al sistema</p>
+                <label>Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="usuario@veterinaria.com">
+                <label>Contraseña:</label>
+                <div class="mb-3">
+                    <div class="input-group">
+                        <input class="form-control" type="password" id="password" name="password" placeholder="Digite su contraseña">
+                        <button class="btn btn-outline-secondary" type="button" id="btnVerPassword"><i class="bi bi-eye"></i></button>
+                    </div>
+                </div>
+                <div id="mensajeLogin"></div>
+                <button type="submit">Ingresar</button>
+            </form>
+        </section>
+        <section class="login-info-section">
+            <div class="brand-box">
+                <div class="logo">🐾</div>
+                <h2>Veterinaria Patitas Felices</h2>
+                <p>
+                    Sistema para la gestión de mascotas, propietarios, citas,
+                    vacunas, medicamentos y expedientes clínicos.
+                </p>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./public/js/login.js"></script>
+</body>
+</html>

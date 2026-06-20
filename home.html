@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Veterinaria</title>
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span>🐾</span>
+            <h2>Patitas Felices</h2>
+        </div>
+        <nav class="nav sidebar-menu">
+            <a class="nav-link active" href="home.html">Inicio</a>
+            <a class="nav-link" href="./pages/mascotas.html">Mascotas</a>
+            <a class="nav-link" href="./pages/propietarios.html">Propietarios</a>
+            <a class="nav-link" href="./pages/vacunas.html">Vacunas</a>
+            <a class="nav-link" href="./pages/medicamentos.html">Medicamentos</a>
+            <a class="nav-link" href="./pages/expedientes.html">Expedientes</a>
+            <a class="nav-link" href="./pages/reportes.html">Reportes</a>
+            <a class="nav-link logout" href="index.html">Cerrar sesión</a>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <header class="topbar">
+            <h1>Dashboard</h1>
+            <p>Bienvenido al sistema de gestión veterinaria</p>
+        </header>
+        <section class="cards-container">
+            <article class="card">
+                <h3>Mascotas Registradas</h3>
+                <p class="number">25</p>
+            </article>
+            <article class="card">
+                <h3>Citas del días</h3>
+                <p class="number">8</p>
+            </article>
+            <article class="card">
+                <h3>Medicamentos activos</h3>
+                <p class="number">15</p>
+            </article>
+        </section>
+        <section class="panel">
+            <h2>Últimos expedientes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mascota</th>
+                        <th>Especie</th>
+                        <th>Propietario</th>
+                        <th>Última visita</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nala</td>
+                        <td>Perro</td>
+                        <td>Danilo Chinchilla</td>
+                        <td>05/06/2026</td>
+                    </tr>
+                    <tr>
+                        <td>Michi</td>
+                        <td>Gato</td>
+                        <td>Nicole Montenegro</td>
+                        <td>04/06/2026</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <footer>
+            <p> &copy; 2026 - Veterinaria Patitas Felices</p>
+        </footer>
+    </main>
+</body>
+</html>
