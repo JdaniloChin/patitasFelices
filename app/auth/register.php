@@ -49,7 +49,7 @@
     $idUsuario = $pdo->lastInsertId();
 
     $stmt = $pdo->prepare("
-        INSERT INTO propietariso (id_usuario, telefono, direccion)
+        INSERT INTO propietarios (id_usuario, telefono, direccion)
         VALUES(?,?,?)
     ");
 

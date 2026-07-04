@@ -11,9 +11,15 @@ function cargarEnv(string $ruta): void{
         if($linea === "" || str_starts_with($linea, "#")){
             continue;
         }
+
+        if(!str_contains($linea, "=")){
+            continue;
+        }
+
+        [$clave, $valor] = explode("=", $linea, 2);
+        $_ENV[trim($clave)] = trim($valor);
+
     }
 
-    [$clave, $valor] = explode("=", $linea, 2);
-    $_ENV[trim($clave)] = trim($valor);
-
+    
 }
