@@ -5,7 +5,7 @@ session_start();
 require_once "../config/database.php";
 require_once "../helpers/response.php";
 
-$input = json_decode(file_get_contents("php://input",true));
+$input = json_decode(file_get_contents("php://input"), true);
 
 $correo = trim($input["correo"] ?? "");
 $password = trim($input["password"] ?? "");
@@ -18,7 +18,7 @@ $db = new DataBase();
 $pdo = $db->conectar();
 
 $stmt = $pdo->prepare("
-    SELECT id_usuario, nombre, correo, passwod_hash, rol, estado
+    SELECT id_usuario, nombre, correo, password_hash, rol, estado
     FROM usuarios
     WHERE correo = ?
     LIMIT 1
@@ -40,7 +40,7 @@ $_SESSION["usuario"] = [
 ];
 
 jsonResponse(true,"Inicio sessión correcto",[
-    "usuario" => $_SESSION["usuario"];
+    "usuario" => $_SESSION["usuario"]
 ]);
 
 
