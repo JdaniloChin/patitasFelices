@@ -1,0 +1,6 @@
+.gti
+.gitignore
+.vscode
+README.md
+*.log
+.env

@@ -17,8 +17,17 @@ function cargarEnv(string $ruta): void{
         }
 
         [$clave, $valor] = explode("=", $linea, 2);
-        $_ENV[trim($clave)] = trim($valor);
 
+        $clave = trim($clave);
+        $valor = trim($valor);
+
+        //evitar sobrescribir variable docker
+        if(getenv($clave) !== false){
+            continue;
+        }
+
+        $_ENV[trim($clave)] = trim($valor);
+        putenv("{$clave}={$valor}");
     }
 
     

@@ -5,11 +5,11 @@ cargarEnv(__DIR__ . "/../../.env");
 class DataBase{
     public function conectar(): PDO {
         try{
-            $host = $_ENV["BD_HOST"] ?? "localhost";
-            $dbName = $_ENV["DB_NAME"] ?? "";
-            $user = $_ENV['DB_USER'] ?? "";
-            $pass = $_ENV["DB_PASS"] ?? "";
-            $charset = $_ENV["DB_CHARSET"] ?? "utf8mb4";
+            $host = getenv("DB_HOST") ?: $_ENV["BD_HOST"] ?? "localhost";
+            $dbName = getenv("DB_NAME") ?: $_ENV["DB_NAME"] ?? "";
+            $user = getenv("DB_USER") ?: $_ENV['DB_USER'] ?? "";
+            $pass = getenv("DB_PASSWORD") ?: $_ENV["DB_PASSWORD"] ?? "";
+            $charset = getenv("DB_CHARSET") ?: $_ENV["DB_CHARSET"] ?? "utf8mb4";
 
             $dsn = "mysql:host=$host;dbname=$dbName;charset=$charset";
 

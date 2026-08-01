@@ -1,0 +1,57 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    container_name: patitas_web
+
+    ports:
+      - "8080:80"
+    
+    volumes:
+      - .:/var/www/html
+    
+    depends_on:
+      db:
+        condition: service_healthy
+      
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: patitas_felices
+      DB_USER: patitas_user
+      DB_PASSWORD: patitas123
+
+  db:
+    image: mysql:8.0
+
+    container_name: patitas_db
+
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: patitas_felices
+      MYSQL_USER: patitas_user
+      MYSQL_PASSWORD: patitas123
+
+    ports:
+      - "3307:3306"
+
+    volumes: 
+      - patitas_mysql_data:/var/lib/mysql
+      - ./app/scriptsBD/patitas_felices.sql:/docker-entrypoint-initdb.d/01-patitas-felices.sql:ro
+
+    healthcheck:
+        test:
+          [
+            "CMD-SHELL",
+            "mysqladmin ping -h localhost -u root -p$$MYSQL_ROOT_PASSWORD"
+          ]
+        interval: 5s
+        timeout: 5s
+        retries: 15
+  
+volumes:
+  patitas_mysql_data:
